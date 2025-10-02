@@ -1,5 +1,5 @@
 import React from 'react'
-
+import image from "../assets/profile.png"
 const About = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
@@ -14,7 +14,7 @@ const About = () => {
         <div className="w-full lg:w-1/2">
           <div className="relative">
             <img
-              src="/src/assets/profile.png"
+              src={image}
               alt="About Ayushman Pathak"
               className="w-80 h-50 sm:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl ring-2 ring-gray-700/50 hover:ring-blue-500/50 transition-all duration-300 hover:scale-105"
               onError={(e) => {
