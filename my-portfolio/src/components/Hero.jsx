@@ -1,5 +1,5 @@
 import React from 'react'
-
+import image from "../assets/profile.png"
 const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -21,7 +21,7 @@ const Hero = () => {
               </div>
               
               <img
-                src="/src/assets/profile.png"
+                src={image}
                 alt="Ayushman Pathak"
                 className="relative w-full h-full rounded-full object-cover shadow-2xl ring-4 ring-gray-700/50 group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
