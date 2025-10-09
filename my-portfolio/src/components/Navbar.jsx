@@ -48,16 +48,17 @@ const Navbar = () => {
         block: 'start'
       })
     }
-    setIsOpen(false) // Close mobile menu after clicking
+    setIsOpen(false)
   }
 
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Projects', id: 'projects' },
+    { name: 'Resume', id: 'resume' },
     { name: 'Contact', id: 'contact' }
   ]
-
+  
   return (
     <nav 
       ref={navRef}
