@@ -51,7 +51,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium animate-fade-in-up delay-200">
-            Aspiring Software Engineer | DSA Enthusiast | Machine Learning | Mern Stack Developer
+            Aspiring Software Engineer | DSA Enthusiast | Mern Stack Developer | Spring Boot
           </p>
           
           <div className="mt-4 h-8 flex items-center justify-center">

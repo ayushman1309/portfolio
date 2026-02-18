@@ -15,7 +15,7 @@ const Resume = () => {
 
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         <a
-          href="https://drive.google.com/file/d/1G3GYh7ZB5ZBNTCvEyS8SjYKX3k4b0MXS/view?usp=sharing"
+          href="https://drive.google.com/file/d/1Ihtb9iJpveJsubs0b9n89sQIrxymqr27/view?usp=drivesdk"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25"
