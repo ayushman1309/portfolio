@@ -4,11 +4,45 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const navRef = useRef(null)
+  const lastScrollY = useRef(0)
+  const ticking = useRef(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+  useEffect(() => {
+    const updateNavbarVisibility = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY <= 0) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY.current) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+
+      lastScrollY.current = currentScrollY
+      ticking.current = false
+    }
+
+    const handleScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(updateNavbarVisibility)
+        ticking.current = true
+      }
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -62,7 +96,7 @@ const Navbar = () => {
   return (
     <nav 
       ref={navRef}
-      className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/50 shadow-2xl relative overflow-hidden cursor-none"
+      className={`sticky top-0 z-50 border-b border-gray-700/50 bg-gray-900/80 backdrop-blur-md shadow-2xl transition-transform duration-300 ease-out ${isVisible ? 'translate-y-0' : '-translate-y-full'} relative overflow-hidden cursor-none`}
     >
       <div
         className={`absolute pointer-events-none transition-all duration-300 ease-out z-10 ${
